@@ -1,9 +1,11 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import { useSelector } from "react-redux";
+
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import LoginForm from "./components/LoginForm";
+import Counter from "./components/counter";
 
 // steps -
 // list of registered users -
@@ -16,7 +18,7 @@ import LoginForm from "./components/LoginForm";
 
 function App() {
   const loggedInUser = useSelector((state) => {
-    return state.loggedInUser;
+    return state.auth.loggedInUser;
   });
 
   return (
@@ -30,6 +32,9 @@ function App() {
           <LoginForm />
         </>
       )}
+
+      <p>----------------------------------------------------------</p>
+      <Counter />
     </>
   );
 }
